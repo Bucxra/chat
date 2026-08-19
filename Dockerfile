@@ -8,7 +8,7 @@ COPY . /app
 WORKDIR /app
 
 # ვამზადებთ (ვასრულებთ Build-ს) C++ სერვერს
-RUN g++ -o server server.cpp -lsfml-network -lsfml-system
+RUN g++ -O2 server.cpp -o server -lsfml-network -lsfml-system -pthread
 
 # ვრთავთ სერვერს
 CMD ["./server"]
